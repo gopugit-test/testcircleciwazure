@@ -13,20 +13,20 @@ workflows:
     - terraform/validate:
         checkout: true
         context: terraform
-        path: ./Terraform/AKS
+        path: ./
 
     - terraform/plan:
         checkout: true
         #var: client_secret=${client_secret}
         context: terraform
         persist-workspace: true
-        path: ./Terraform/AKS
+        path: ./
         requires:
         - terraform/validate
     - terraform/apply:
         attach-workspace: true
         context: terraform
-        path: ./Terraform/AKS
+        path: ./
         filters:
           branches:
             only: main
