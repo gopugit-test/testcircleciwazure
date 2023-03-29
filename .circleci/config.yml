@@ -29,7 +29,7 @@ workflows:
         path: ./Terraform/AKS
         filters:
           branches:
-            only: circleci-project-setup
+            only: main
         requires:
           - terraform/plan
 
